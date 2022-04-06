@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Home extends React.Component{
+class trangchu extends React.Component{
     render() {
         return (
             <div id='top'>
@@ -186,6 +186,4 @@ class Home extends React.Component{
         );
     }
 }
-export default Home;
-
-
+export default trangchu;
