@@ -53,3 +53,20 @@ export const getSanpham = () => {
         };
       });
   };
+
+  export const deletesp = () => {
+    return axios
+      .get('/deleteSanpham/:id')
+      .then((response) => {
+        return response.data;
+      })
+      .catch((err) => {
+        return {
+          message: {
+            msgBody: 'Lỗi!!!',
+            msgError: true,
+          },
+          err,
+        };
+      });
+  };

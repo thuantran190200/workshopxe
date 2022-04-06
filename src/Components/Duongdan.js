@@ -15,6 +15,8 @@ import test from './test';
 import trangchu from './trangchu';
 import share from './share';
 import Detail  from './Detail';
+import deletesp from './deletesp';
+// import ProductDetail from '../page/productDetail';
 // import Register from './Register';
 // import UpdateProfile from './UpdateProfile';
 
@@ -29,7 +31,9 @@ function DuongDanURL() {
       <Route path="/admin"  component={admin} />
       <Route path="/share"  component={share} />
       <Route path="/trangchu"  component={trangchu} />
-      <Route path="/Detail"  component={Detail} />
+      <Route path="/Detail/:id"  component={Detail} />
+      <Route path="/deletesp/:id"  component={deletesp} />
+      <Route path="/test"  component={test} />
       <Route path="/Listsp"  component={Listsp} />
       <Route path="/Listdanhmuc"  component={Listdanhmuc} />
       {/* <PrivateRouter path="/profile" roles={['user']} component={Profile} />
