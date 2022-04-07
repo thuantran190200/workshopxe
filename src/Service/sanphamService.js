@@ -54,9 +54,9 @@ export const getSanpham = () => {
       });
   };
 
-  export const deletesp = () => {
+  export const deletesp = (id) => {
     return axios
-      .get('/deleteSanpham/:id')
+      .get('/deleteSanpham/+id')
       .then((response) => {
         return response.data;
       })
