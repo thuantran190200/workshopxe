@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
+import ListspAdmin from "../sp/ListspAdmin";
 function admin()
 {
 return <div>
@@ -480,7 +481,7 @@ return <div>
 </div>
 
 </div>
-
+<ListspAdmin/>
 </div>
 
 }

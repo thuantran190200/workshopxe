@@ -43,7 +43,7 @@ function Sanpham(props) {
         if (!message.msgError) {
           setMessage(message);
           setTimeout(() => {
-            props.history.push('/addsanpham');
+            props.history.push('/admin');
           }, 2000);
         }
       });
