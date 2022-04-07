@@ -50,7 +50,7 @@ class Listsp extends React.Component {
                                 
                                 <div class="col-4">
 
-            <img src="https://th.bing.com/th/id/R.0ecb587227caf0b438e9a43e3175fc5f?rik=GyBkcHTVYn07LA&riu=http%3a%2f%2fphutungxehonda.com%2fupload%2fsanpham%2fmu_ga1l-5812.JPG&ehk=SsCkYBzcPckZ0QoZpuEjM4O6F%2bHWZtz8JMLRYTe50mg%3d&risl=&pid=ImgRaw&r=0"/>
+            <img src={item.IMG} alt={item.IMG}/>
             <Link to={`/Detail/${item._id}`} >{item.TenSP}</Link>
             <Link to={`/delete/${item._id}`} >Xóa</Link>
             <h4 type="color:red">{item.Gia}</h4>
