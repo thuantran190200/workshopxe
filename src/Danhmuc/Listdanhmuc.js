@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
+import Cart from '../Components/Cart';
+import { NavLink } from 'react-router-dom';
 import { getDanhmuc } from '../Service/danhmucService';
 
 class Listsp extends React.Component {
@@ -55,7 +57,7 @@ class Listsp extends React.Component {
                             )
                         })
                     }
-
+                    <ul><NavLink to="/Cart">Cart</NavLink></ul>
 </div>
 
           

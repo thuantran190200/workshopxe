@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+import Cart from './Cart';
 import Home from './Home';
 import Login from './Login';
 // import privateRouter from '../ProtectingRouter/PrivateRouter';
@@ -37,6 +38,7 @@ function DuongDanURL() {
       <Route path="/update/:id"  component={updatesp} />
       <Route path="/deletesp/:id"  component={deletesp} />
       <Route path="/test"  component={test} />
+      <Route path="/Cart"  component={Cart} />
       <Route path="/Listsp"  component={Listsp} />
       <Route path="/Listdanhmuc"  component={Listdanhmuc} />
 

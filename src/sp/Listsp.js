@@ -49,10 +49,12 @@ class Listsp extends React.Component {
 
                                 
                                 <div class="col-4">
-
+            {/* xem chi tiết sản phẩm */}
             <img src={item.IMG} alt={item.IMG}/>
             <Link to={`/Detail/${item._id}`} >{item.TenSP}</Link>
-            <Link to={`/delete/${item._id}`} >Xóa</Link>
+            {/*end  */}
+
+            {/* <Link to={`/delete/${item._id}`} >Xóa</Link> */}
             <h4 type="color:red">{item.Gia}</h4>
             <div class="rating">
                 <i class="fa fa-star"></i>
