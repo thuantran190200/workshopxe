@@ -27,7 +27,7 @@ export class Product extends Component {
                                     
                                         <img src={item.IMG} alt={item.IMG}/>
                                         <h5><Link to={`/Detail/${item._id}`} >{item.TenSP}</Link></h5>
-                                        <h4 type="color:red">{item.Gia}</h4>
+                                        <h4 type="color:red">Giá: {item.Gia.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} VNĐ</h4>
                                         <div class="rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
