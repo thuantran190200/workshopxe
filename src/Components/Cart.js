@@ -1,9 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component ,useState} from 'react'
 import { connect } from "react-redux";
 import { NavLink } from 'react-router-dom';
 import {IncreaseQuantity,DecreaseQuantity,DeleteCart} from '../actions';
-
-function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
+import { adoder } from '../Service/OderServices';
+import Message from './Message';
+function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart,props}){
+   
+    
   //  console.log(items)
     let ListCart = [];
     let TotalCart=0;
@@ -15,7 +18,67 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
         return Number(price * tonggia).toLocaleString('en-US');
     }
     
+    const [oder, setOder] = useState({
+        tenkh: '',
+        diachi: '',
+        sdt:'',
+        mail:'',
+      
+        // masp:'',
+        // tensp:'',
+        // gia:'',
+        // soluong:'',
     
+       
+      });
+
+      const [message, setMessage] = useState(false);
+
+  const onChange = (e) => {
+    e.preventDefault();
+    const newoder = { ...oder };
+    newoder[e.target.name] = e.target.value;
+    setOder(newoder);
+  };
+
+  
+  const onSubmit = (e) => {
+    e.preventDefault();
+    {
+        ListCart.map((item)=>{
+            const variable = {
+                TenKH: oder.tenkh,
+                Diachi: oder.diachi,
+                Sdt:oder.sdt,
+                Mail:oder.mail,
+              
+                Masp:item.id,
+                TenSP:item.name,
+                Gia:item.price,
+                Soluong:item.quantity,
+             
+             };
+             adoder(variable).then((data) => {
+                const { message } = data;
+                setMessage(message);
+        
+                if (!message.msgError) {
+                  setMessage(message);
+                  setTimeout(() => {
+                    props.history.push('/login');
+                  }, 2000);
+                }
+              });
+
+        })
+    }
+   
+
+  
+   
+  
+  };
+
     return(
         
         <div className="row">
@@ -80,7 +143,11 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
             <div id="myModal" class="modal fade">
                 <div class="modal-dialog modal-login">
                     <div class="modal-content">
-                        <form method="post">
+                    {message ? <Message message={message} /> : null}
+                        <form  id="contactForm"
+                     name="sentMessage"
+                         noValidate="novalidate"
+                            onSubmit={onSubmit}>
                             <div class="modal-header">
                                 <h1 class="modal-title">Thanh toán</h1>
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -89,25 +156,43 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
                             <div class="modal-body">
                                 <div class="form-group">
                                     <label>Địa chỉ giao hàng</label>
-                                    <input type="text" name="diachi" value="" class="form-control"/>  
+                                    <input   
+                    type="text"
+                   
+                    autoFocus={true}
+                    value={oder.Diachi}
+                    onChange={onChange}  name="diachi"  class="form-control"/>  
                                     <div class="form-group">
                                         <label>Họ Tên</label>
-                                        <input name="hoten" type="text" value="" class="form-control"/>
+                                        <input  type="text"
+                   
+                   autoFocus={true}
+                   value={oder.TenKH}
+                   onChange={onChange}  name="tenkh" class="form-control"/>
                                     </div>
 
                                     <div class="form-group">
                                         <label>SĐT</label>
-                                        <input name="sdt" type="text" value="" class="form-control" />
+                                        <input  type="text"
+                   
+                   autoFocus={true}
+                   value={oder.Sdt}
+                   onChange={onChange}  name="sdt" class="form-control" />
                                     </div>
 
                                     <div class="form-group">
                                         <label>Mail</label>
-                                        <input name="mail" type="text" value=""  class="form-control" />
+                                        <input  type="text"
+                   
+                   autoFocus={true}
+                   value={oder.Mail}
+                   onChange={onChange}  name="mail"  class="form-control" />
                                     </div>
                                 </div>
                  
                                 <div class="modal-footer justify-content-between">
-                                    <input type="submit" name="submit" class="btn btn-primary" value="Thanh Toán"/>
+                                    <input  id="sendMessageButton"
+                  type="submit" class="btn btn-primary" value="Thanh Toán"/>
                                 </div>
                             </div>
                         </form>
