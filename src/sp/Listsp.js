@@ -30,16 +30,7 @@ class Listsp extends React.Component {
 
     render() {
         let { listUsers } = this.state;
-        return (
-
-
-
-
-
-
-
-
-            
+        return (       
             <div class="row">
                 
                     {listUsers && listUsers.length > 0 &&
@@ -67,9 +58,9 @@ class Listsp extends React.Component {
 
             </div>
             <div class="socials-share">
-    <a class="bg-facebook"  href="https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/All-RacingShop-106377424321048/?ref=pages_you_manage" target="_blank"><span class="fab fa-facebook"></span> Share</a>
-    <a class="bg-email"   href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to&su=&body=https://www.facebook.com/All-RacingShop-106377424321048/?ref=pages_you_manage" target="_blank"><span class="fa fa-envelope"></span> Gmail</a>
-</div>
+                <a class="bg-facebook"  href="https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/All-RacingShop-106377424321048/?ref=pages_you_manage" target="_blank"><span class="fab fa-facebook"></span> Share</a>
+                <a class="bg-email"   href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to&su=&body=https://www.facebook.com/All-RacingShop-106377424321048/?ref=pages_you_manage" target="_blank"><span class="fa fa-envelope"></span> Gmail</a>
+            </div>
         </div>
         
                             )

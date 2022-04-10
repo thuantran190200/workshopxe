@@ -123,7 +123,7 @@ class Home extends React.Component{
                 <div class="one_third">
                   <h6 class="heading">Sản Phẩm</h6>
                   <ul class="nospace clear latestimg">
-                    <li><a href="#"><img src="./assets/images/demo/backgrounds/phuoc.jpg" alt="" /></a></li>
+                    <li><a href="#"><img src="../assets/images/demo/backgrounds/phuoc.jpg" alt="" /></a></li>
                     <li><a href="#"><img src="./assets/images/demo/backgrounds/nhot.jpg" alt="" /></a></li>
                     <li><a href="#"><img src="./assets/images/demo/backgrounds/mam.jpg" alt="" /></a></li>
                     <li><a href="#"><img src="./assets/images/demo/backgrounds/o.jpg" alt="" /></a></li>
