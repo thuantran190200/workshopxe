@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Cart from './Cart';
+
 import Home from './Home';
 import Login from './Login';
 // import privateRouter from '../ProtectingRouter/PrivateRouter';
@@ -19,6 +19,8 @@ import Detail  from './Detail';
 import deletesp from './deletesp';
 import ListspAdmin from '../sp/ListspAdmin';
 import updatesp from '../sp/updatesp';
+import Product from './Product';
+import Cart from './Cart';
 // import ProductDetail from '../page/productDetail';
 // import Register from './Register';
 // import UpdateProfile from './UpdateProfile';
@@ -41,6 +43,8 @@ function DuongDanURL() {
       <Route path="/Cart"  component={Cart} />
       <Route path="/Listsp"  component={Listsp} />
       <Route path="/Listdanhmuc"  component={Listdanhmuc} />
+      <Route path="/Product"  component={Product} />
+      
 
       <Route path="/ListspAdmin"  component={ListspAdmin} />
       {/* <PrivateRouter path="/profile" roles={['user']} component={Profile} />

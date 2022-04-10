@@ -3,6 +3,7 @@ import Listsp from '../sp/Listsp';
 import Listdanhmuc from '../Danhmuc/Listdanhmuc';
 
 import share from './share';
+import Product from './Product';
 class Home extends React.Component{
 
   
@@ -74,8 +75,7 @@ class Home extends React.Component{
                   <h6 class="heading">Thông Tin Shop</h6>
                   <p>Tham Gia Và Liên Hệ Trực Tiếp Tại Đây</p>
                 </div>
-
-                <Listsp/>
+                <Product/>
                 
                 <div id="latest" class="group">
                   <article class="one_third first"><a class="imgover" href="https://www.facebook.com/groups/310173003295730"><img src="./assets/images/demo/backgrounds/Capture.PNG" alt="" /></a>

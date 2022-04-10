@@ -3,8 +3,9 @@ import axios from 'axios';
 import Cart from '../Components/Cart';
 import { NavLink } from 'react-router-dom';
 import { getDanhmuc } from '../Service/danhmucService';
+import {connect} from 'react-redux'
 
-class Listsp extends React.Component {
+class Listdanhmuc extends React.Component {
 
     state = {
         listUsers: []
@@ -34,14 +35,6 @@ class Listsp extends React.Component {
         
         return (
 
-
-
-
-
-
-
-
-            
             <div class="row">
                 
                     {listUsers && listUsers.length > 0 &&
@@ -58,6 +51,7 @@ class Listsp extends React.Component {
                         })
                     }
                     <ul><NavLink to="/Cart">Cart</NavLink></ul>
+                    <ul><li className="nav-item"><NavLink to="/Cart" className="nav-link">Carts : {this.props.numberCart}</NavLink></li></ul>
 </div>
 
           
@@ -65,4 +59,10 @@ class Listsp extends React.Component {
     }
 }
 
-export default Listsp;
+const mapStateToProps = state =>{
+  return{
+      numberCart:state._todoProduct.numberCart
+  }
+}
+
+export default connect(mapStateToProps,null)(Listdanhmuc);
