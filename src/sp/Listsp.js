@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { NavLink,Link } from 'react-router-dom';
 import { getSanpham } from '../Service/sanphamService';
-
+import { getOder } from '../Service/OderServices';
+import ReactHTMLTableToExcel from 'react-html-table-to-excel'; 
 class Listsp extends React.Component {
 
     state = {
@@ -12,7 +13,7 @@ class Listsp extends React.Component {
        //  let res = await axios.get('/getSanpham');
 
 
-         getSanpham().then((data) => {
+         getOder().then((data) => {
             setTimeout(() => {
               if (data || data.success) {
                 const { existProfile } = data;
@@ -31,42 +32,87 @@ class Listsp extends React.Component {
     render() {
         let { listUsers } = this.state;
         return (       
-            <div class="row">
-                
-                    {listUsers && listUsers.length > 0 &&
+           
+<div class="grid_10">
+	<div class="box round first grid">
+		<h2>Danh Sách oder</h2>
+		<div class="block">
+		
+        
+
+			<a href="http://localhost/webxe/webPhpXe/wavefire/admin/admin/index.php">Trang chủ</a>
+           
+			<table id="emp"  class="data display datatable">
+				<thead>
+					<tr>
+						<th>idoder</th>
+						
+						<th>Địa chỉ</th>
+						<th>Tên KH</th>
+						<th>Sđt</th>
+						<th>mail</th>
+
+                       
+                        <th>Số lượng</th>
+                        <th>Giá</th>
+                        <th>Mã sản phẩm</th>
+                    
+					
+					</tr>
+				</thead>
+
+			
+				
+                   
+                {listUsers && listUsers.length > 0 &&
                         listUsers.map((item, index) => {
+                            
                             return (
                               
 
+                                <tbody>
+                               
+           
+           
+                                <td>{item._id}</td>
                                 
-                                <div class="col-4">
-            {/* xem chi tiết sản phẩm */}
-            <img src={item.IMG} alt={item.IMG}/>
-            <Link to={`/Detail/${item._id}`} >{item.TenSP}</Link>
-            {/*end  */}
+                                <td>{item.Diachi}</td>
+                                <td>{item.TenKH}</td>
+                                <td>{item.Sdt}</td>
+                                <td>{item.Mail}</td>
+                              
+                                <td>{item.Soluong}</td>
+                                <td>{item.Gia}</td>
+                                <td>{item.Masp}</td>
+              
 
-            {/* <Link to={`/delete/${item._id}`} >Xóa</Link> */}
-            <h4 type="color:red">{item.Gia}</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-0"></i>
-
-
-
-            </div>
-            <div class="socials-share">
-                <a class="bg-facebook"  href="https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/All-RacingShop-106377424321048/?ref=pages_you_manage" target="_blank"><span class="fab fa-facebook"></span> Share</a>
-                <a class="bg-email"   href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to&su=&body=https://www.facebook.com/All-RacingShop-106377424321048/?ref=pages_you_manage" target="_blank"><span class="fa fa-envelope"></span> Gmail</a>
-            </div>
-        </div>
+                                </tbody>
         
                             )
                         })
                     }
+                    
+                   
+                   
+                 
+              
+        
+							
+				
+			</table>
 
+
+            <div>  
+                                        <ReactHTMLTableToExcel  
+                                                className="btn btn-info"  
+                                                table="emp"  
+                                                filename="ReportExcel"  
+                                                sheet="Sheet"  
+                                                buttonText="Export excel" ></ReactHTMLTableToExcel>  
+                                </div>  
+	
+		</div>
+	</div>
 </div>
 
           

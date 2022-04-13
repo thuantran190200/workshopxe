@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import {actFetchProductsRequest,AddCart} from '../actions'
 import {connect} from 'react-redux';
-import { NavLink,Link } from 'react-router-dom';
+import { NavLink,Link ,useParams} from 'react-router-dom';
 
 export class Product extends Component {
+   
     constructor(props) {
         super(props)
        
@@ -14,15 +15,19 @@ export class Product extends Component {
     }
     
     render() {
+   
         const {_getSanpham} = this.props._getSanpham;
         if(_getSanpham.length>0){
-           
+          
            return (
                 <div class="row">
                     
                         
                             {
-                                _getSanpham.map((item,index)=>(
+                                _getSanpham.map((item,index)=>{
+                                
+                                  
+                              return  (
                                     <div class="col-4">
                                     
                                         <img src={item.IMG} alt={item.IMG}/>
@@ -42,7 +47,10 @@ export class Product extends Component {
                                         </div>
                                     </div>
                                     
-                                ))
+                                )
+                                
+                                
+                               } )
                             }
                         
                     

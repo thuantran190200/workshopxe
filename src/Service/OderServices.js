@@ -17,3 +17,21 @@ export const adoder = (dm) => {
       });
   };
 
+
+  export const getOder = () => {
+    return axios
+      .get('/getoder')
+      .then((response) => {
+        return response.data;
+      })
+      .catch((err) => {
+        return {
+          message: {
+            msgBody: 'Lỗi!!!',
+            msgError: true,
+          },
+          err,
+        };
+      });
+  };
+

@@ -21,6 +21,7 @@ import ListspAdmin from '../sp/ListspAdmin';
 import updatesp from '../sp/updatesp';
 import Product from './Product';
 import Cart from './Cart';
+import Viewdanhmuc from './Viewdanhmuc';
 // import ProductDetail from '../page/productDetail';
 // import Register from './Register';
 // import UpdateProfile from './UpdateProfile';
@@ -37,6 +38,8 @@ function DuongDanURL() {
       <Route path="/share"  component={share} />
       <Route path="/trangchu"  component={trangchu} />
       <Route path="/Detail/:id"  component={Detail} />
+
+      <Route path="/Viewdanhmuc/:id"  component={Viewdanhmuc} />
       <Route path="/update/:id"  component={updatesp} />
       <Route path="/deletesp/:id"  component={deletesp} />
       <Route path="/test"  component={test} />

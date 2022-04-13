@@ -43,7 +43,7 @@ class Listdanhmuc extends React.Component {
                                 <ul class="clear">
                                
                               
-                                <li><a href="pages/mam.html">{item.TenDM}</a></li>
+                                <li><NavLink to={`/Viewdanhmuc/${item.MADM}`} >{item.TenDM}</NavLink></li>
                                 
                               </ul>
 
