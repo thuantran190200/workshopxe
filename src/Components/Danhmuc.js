@@ -34,7 +34,7 @@ function Danhmuc(props) {
         if (!message.msgError) {
           setMessage(message);
           setTimeout(() => {
-            props.history.push('/login');
+            // props.history.push('/login');
           }, 2000);
         }
       });

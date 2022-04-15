@@ -65,7 +65,7 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart,props}){
                 if (!message.msgError) {
                   setMessage(message);
                   setTimeout(() => {
-                    props.history.push('/login');
+                   
                   }, 2000);
                 }
               });

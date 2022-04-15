@@ -26,7 +26,7 @@ export const login = (user) => {
       } else {
         return {
           isAuthenticated: false,
-          user: { username: '', role: '' },
+          user: { username: '', role: 'admin' },
           message: { msgBody: 'Error', msgError: true },
         };
       }

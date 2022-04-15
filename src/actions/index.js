@@ -9,7 +9,7 @@ export const DELETE_CART = 'DELETE_CART';
 
 export const actFetchProductsRequest = () => {
     return (dispatch) => {
-        return callApi('news/1', 'GET', null).then(res => {
+        return callApi('getSanpham', 'GET', null).then(res => {
           
             dispatch(GetAllProduct(res.data));
         });
