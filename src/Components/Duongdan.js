@@ -39,6 +39,11 @@ function DuongDanURL() {
       <Route path="/trangchu"  component={trangchu} />
       <Route path="/Detail/:id"  component={Detail} />
 
+
+
+
+
+
       <Route path="/Viewdanhmuc/:id"  component={Viewdanhmuc} />
       <Route path="/update/:id"  component={updatesp} />
       <Route path="/deletesp/:id"  component={deletesp} />
