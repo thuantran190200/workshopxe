@@ -43,6 +43,7 @@ class ListspAdmin extends React.Component {
                 });
                 result =await result.json();
                 console.warn('delete',result)
+                window.location.href="/admin";
          
               
         }

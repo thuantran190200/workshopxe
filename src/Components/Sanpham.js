@@ -82,7 +82,7 @@ function Sanpham(props) {
                     type="text"
                     placeholder="Mã sản phẩm"
                     autoFocus={true}
-                    value={sanpham.MADM}
+                    value={sanpham.Masp}
                     onChange={onChange}
                   />
                 </div>
