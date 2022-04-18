@@ -244,11 +244,11 @@ return <div>
             </li>
 
             <li class="submenu">
-                <a href="http://localhost/webxe/webPhpXe/wavefire/listoder">
+            <NavLink to="/Listsp" >
                     <span class="label radius-circle bg-danger float-right">18</span>
                     <i class="fas fa-envelope"></i>
                     <span> Danh sách oder </span>
-                </a>
+             </NavLink>
             </li>
 
             <li class="submenu">

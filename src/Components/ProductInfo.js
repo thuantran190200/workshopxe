@@ -89,7 +89,7 @@ const ProductInfo = ({ product, loading, error }) => {
           <a class="cart" href="#">
             <span class="price">{product.Gia}</span>
             <span class="add-to-cart">
-              <span class="txt">Add in cart</span>
+              <span  class="txt">Add in cart</span>
             </span>
           </a>
         </div>
@@ -97,7 +97,46 @@ const ProductInfo = ({ product, loading, error }) => {
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+<div class="wrapper row4">
+    <footer id="footer" class="hoc clear">
+      
+       
+
+
+        <div class="one_third">
+            <h6 class="heading">Bình Luận ở đây</h6>
+            <form method="post" action="#">
+                <fieldset>
+                    <legend>Bình luận</legend>
+                    <input class="btmspace-15" type="text" name="txtCmt" v placeholder="Nọi dung"/>
+                    <input class="btmspace-15" type="text" name="txtName" value=""placeholder="Tên của bạn"/>
+
+                    <ul class="dangnhap">
+                        <li class="dangki">
+                            <button type="submit" name="submitcmt">Bình luận</button>
+
+                        </li>
+                      
+                    </ul>
+                </fieldset>
+            </form>
+        </div>
+        </footer>
+
+</div>
       </>
+
+
+
+
+
     }
 
     { loading && <h2>Loading...</h2>}

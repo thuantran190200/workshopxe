@@ -65,7 +65,11 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart,props}){
                 if (!message.msgError) {
                   setMessage(message);
                   setTimeout(() => {
+<<<<<<< HEAD
                   
+=======
+                   
+>>>>>>> b37ea14b0cf3d9f9c4faaf0795ea3adac80c3af1
                   }, 2000);
                 }
               });
@@ -104,7 +108,7 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart,props}){
                             <td></td>  
                             <td><img src={item.image} style={{width:'100px',height:'80px'}}/></td>
                             <td>{item.name}</td>
-                            <td>{item.price.toLocaleString('vi', {style : 'currency', currency : 'VNĐ'})}</td>
+                            <td>{item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} VNĐ</td>
                             
                             <td>
                                     <span className="btn btn-primary" style={{margin:'2px'}} onClick={()=>DecreaseQuantity(key)}>-</span>

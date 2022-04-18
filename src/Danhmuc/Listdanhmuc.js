@@ -36,21 +36,21 @@ class Listdanhmuc extends React.Component {
         return (
 
             <div class="row">
-                
+                <ul><NavLink to="/\">Home</NavLink></ul>
                     {listUsers && listUsers.length > 0 &&
                         listUsers.map((item, index) => {
                             return (
                                 <ul class="clear">
                                
                               
-                                <li><a href="pages/mam.html">{item.TenDM}</a></li>
+                                <li><NavLink to={`/Viewdanhmuc/${item.MADM}`} >{item.TenDM}</NavLink></li>
                                 
                               </ul>
 
                             )
                         })
                     }
-                    <ul><NavLink to="/Cart">Cart</NavLink></ul>
+                    
                     <ul><li className="nav-item"><NavLink to="/Cart" className="nav-link">Carts : {this.props.numberCart}</NavLink></li></ul>
 </div>
 
